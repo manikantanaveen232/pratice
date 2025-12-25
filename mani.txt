@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Hello
-=======
-
->>>>>>> master
+Hello this Manikanta
