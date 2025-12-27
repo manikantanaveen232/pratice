@@ -26,7 +26,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Test stage
+      - name: Test stage'
         run: |
-          echo "Test stage running"
+          echo Test stage running
           echo "All tests passed"
