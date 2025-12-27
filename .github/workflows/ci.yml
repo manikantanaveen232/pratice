@@ -1,0 +1,22 @@
+name: My First GitHub Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run shell script
+        run: |
+          echo "GitHub Actions is running"
+          echo "Current directory:"
+          pwd
+          echo "List files:"
+          ls -l
