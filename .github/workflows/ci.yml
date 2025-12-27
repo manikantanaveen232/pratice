@@ -1,4 +1,4 @@
-name: My First GitHub Action
+name: Multi-Stage GitHub Action
 
 on:
   push:
@@ -6,17 +6,27 @@ on:
       - main
 
 jobs:
-  run-script:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run shell script
+      - name: Build stage
         run: |
-          echo "GitHub Actions is running"
-          echo "Current directory:"
-          pwd
-          echo "List files:"
+          echo "Build stage running"
           ls -l
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build   # This makes test run AFTER build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Test stage
+        run: |
+          echo "Test stage running"
+          echo "All tests passed"
