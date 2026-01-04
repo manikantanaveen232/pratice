@@ -1,4 +1,5 @@
 Hello this is manikanta
 # welcome to 
 adding second line
-
+Addding the third line
+>>>>>>> master
